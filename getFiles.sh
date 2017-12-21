@@ -26,3 +26,15 @@ wget http://repo.mysql.com/yum/mysql-5.5-community/el/7/x86_64/mysql-community-l
 #sudo yum install --nogpgcheck mysql-community-server-5.5.58-2.el7.x86_64.rpm mysql-community-client-5.5.58-2.el7.x86_64.rpm mysql-community-libs-5.5.58-2.el7.x86_64.rpm
 #sudo /usr/bin/mysql_secure_installation
 
+
+
+# do on other nodes:
+# possibly as root
+sudo sysctl vm.swappiness=1
+echo never > /sys/kernel/mm/transparent_hugepage/enabled
+sudo echo 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' >> /etc/rc.local
+
+echo never > /sys/kernel/mm/transparent_hugepage/defrag
+sudo echo 'echo never > /sys/kernel/mm/transparent_hugepage/defrag' >> /etc/rc.local
+
+
