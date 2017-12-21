@@ -37,4 +37,6 @@ sudo echo 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' >> /etc/rc.
 echo never > /sys/kernel/mm/transparent_hugepage/defrag
 sudo echo 'echo never > /sys/kernel/mm/transparent_hugepage/defrag' >> /etc/rc.local
 
+# small Taragen test
+time hadoop jar /opt/cloudera/parcels/CDH/lib/hadoop-0.20-mapreduce/hadoop-examples.jar teragen 1000 /benchmarks/teragen-1gb-test-3
 
