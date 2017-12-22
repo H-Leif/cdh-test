@@ -8,6 +8,11 @@
 #sudo sysctl vm.swappiness=1
 #cat /proc/sys/vm/swappiness
 
+ssh -i Leif.pem centos@ec2-52-71-129-222.compute-1.amazonaws.com 'sudo useradd -u 2200 winston -p PASSWORD; sudo useradd -u 3200 cutler -p PASSWORD; sudo groupadd dolphins; sudo groupadd bucs; sudo usermod -a -G bucs winston; sudo usermod -a -G dolphins cutler'
+ssh -i Leif.pem centos@ec2-54-242-177-65.compute-1.amazonaws.com 'sudo useradd -u 2200 winston -p PASSWORD; sudo useradd -u 3200 cutler -p PASSWORD; sudo groupadd dolphins; sudo groupadd bucs; sudo usermod -a -G bucs winston; sudo usermod -a -G dolphins cutler'
+ssh -i Leif.pem centos@ec2-34-204-71-148.compute-1.amazonaws.com sudo useradd -u 2200 winston -p PASSWORD; sudo useradd -u 3200 cutler -p PASSWORD; sudo groupadd dolphins; sudo groupadd bucs; sudo usermod -a -G bucs winston; sudo usermod -a -G dolphins cutler'
+ssh -i Leif.pem centos@ec2-54-157-192-93.compute-1.amazonaws.com 'sudo useradd -u 2200 winston -p PASSWORD; sudo useradd -u 3200 cutler -p PASSWORD; sudo groupadd dolphins; sudo groupadd bucs; sudo usermod -a -G bucs winston; sudo usermod -a -G dolphins cutler'
+
 
 
 #sudo yum -y install oracle-j2sdk1.7
@@ -26,10 +31,14 @@ wget http://repo.mysql.com/yum/mysql-5.5-community/el/7/x86_64/mysql-community-l
 #sudo yum install --nogpgcheck mysql-community-server-5.5.58-2.el7.x86_64.rpm mysql-community-client-5.5.58-2.el7.x86_64.rpm mysql-community-libs-5.5.58-2.el7.x86_64.rpm
 #sudo /usr/bin/mysql_secure_installation
 
-
+# sudo yum install 
+# sudo yum install cloudera-manager-daemons cloudera-manager-server
+# sudo yum install cloudera-manager-agent cloudera-manager-daemons
 
 # do on other nodes:
 # possibly as root
+cat /etc/sysconfig/selinux
+
 sudo sysctl vm.swappiness=1
 echo never > /sys/kernel/mm/transparent_hugepage/enabled
 sudo echo 'echo never > /sys/kernel/mm/transparent_hugepage/enabled' >> /etc/rc.local
